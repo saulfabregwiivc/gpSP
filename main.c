@@ -310,8 +310,7 @@ bool main_check_savestate(const u8 *src)
 
   if (!bson_contains_key(p1, "cpu-ticks", BSON_TYPE_INT32) ||
       !bson_contains_key(p1, "exec-cycles", BSON_TYPE_INT32) ||
-      !bson_contains_key(p1, "video-count", BSON_TYPE_INT32) ||
-      !bson_contains_key(p1, "sleep-cycles", BSON_TYPE_INT32))
+      !bson_contains_key(p1, "video-count", BSON_TYPE_INT32))
     return false;
 
   for (i = 0; i < 4; i++)
@@ -342,10 +341,13 @@ bool main_read_savestate(const u8 *src)
   if (!p1 || !p2)
     return false;
 
+  // Backwards compatibility with previous state
+  if (!bson_read_int32(p1, "sleep-cycles", &reg[REG_SLEEP_CYCLES]))
+    reg[REG_SLEEP_CYCLES] = 0;
+
   if (!(bson_read_int32(p1, "cpu-ticks", &cpu_ticks) &&
          bson_read_int32(p1, "exec-cycles", &execute_cycles) &&
-         bson_read_int32(p1, "video-count", (u32*)&video_count) &&
-         bson_read_int32(p1, "sleep-cycles", &reg[REG_SLEEP_CYCLES])))
+         bson_read_int32(p1, "video-count", (u32*)&video_count)))
     return false;
 
   for (i = 0; i < 4; i++)

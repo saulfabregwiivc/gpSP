@@ -118,7 +118,8 @@ bool gba_load_state(const void* src)
 
   if (!bson_read_int32(srcptr, "info-magic", &tmp) || tmp != GBA_STATE_MAGIC)
     return false;
-  if (!bson_read_int32(srcptr, "info-version", &tmp) || tmp != GBA_STATE_VERSION)
+  if (!bson_read_int32(srcptr, "info-version", &tmp) ||
+      (tmp != GBA_STATE_VERSION && tmp != GBA_STATE_VERSION_PREV))
     return false;
 
   // Validate that the state file makes sense before unconditionally reading it.
