@@ -1390,7 +1390,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fire Red (J)
+      // Pokemon Fire Red (J)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1401,7 +1401,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fire Red (E/U)
+      // Pokemon Fire Red (E/U)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1412,7 +1412,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fire Red (S)
+      // Pokemon Fire Red (S)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRS",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1423,7 +1423,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fire Red (G)
+      // Pokemon Fire Red (G)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRD",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1434,7 +1434,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fire Red (I)
+      // Pokemon Fire Red (I)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRI",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1445,7 +1445,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fire Red (F)
+      // Pokemon Fire Red (F)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRF",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1457,7 +1457,7 @@ static const ini_t gbaover[] = {
    },
    {
       /* Hey, this one is the same as Fire Red, who'd have thought? :B */
-      // Pokemon: Leaf Green (E/U)
+      // Pokemon Leaf Green (E/U)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1468,7 +1468,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Leaf Green (S)
+      // Pokemon Leaf Green (S)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGS",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1479,7 +1479,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Leaf Green (G)
+      // Pokemon Leaf Green (G)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGD",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1490,7 +1490,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Leaf Green (I)
+      // Pokemon Leaf Green (I)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGI",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1501,7 +1501,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Leaf Green (F)
+      // Pokemon Leaf Green (F)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGF",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1512,7 +1512,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Leaf Green (J)
+      // Pokemon Leaf Green (J)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1534,7 +1534,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball - Ruby & Sapphire (E)
+      // Pokemon Pinball: Ruby & Sapphire (E)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1545,7 +1545,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball - Ruby & Sapphire (J)
+      // Pokemon Pinball: Ruby & Sapphire (J)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1556,7 +1556,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Fushigi no Dungeon Aka no Kyuujotai (J)
+      // Pokemon Fushigi no Dungeon: Aka no Kyuujotai (J)
       "POKE DUNGEON",              /* gamepak_title        */
       "B24J",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1567,7 +1567,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Red Rescue Team (U)
+      // Pokemon Mystery Dungeon: Red Rescue Team (U)
       "POKE DUNGEON",              /* gamepak_title        */
       "B24E",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1578,7 +1578,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon: Red Rescue Team (E)
+      // Pokemon Mystery Dungeon: Red Rescue Team (E)
       "POKE DUNGEON",              /* gamepak_title        */
       "B24P",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
