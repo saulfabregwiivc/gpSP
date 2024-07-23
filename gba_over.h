@@ -1523,33 +1523,33 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball (U)
+      // Pokemon Pinball - Ruby & Sapphire (U)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_GBA_PLAYER,            /* flags                */
+      FLAGS_FLASH_128KB | FLAGS_GBA_PLAYER, /* flags       */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball (E)
+      // Pokemon Pinball - Ruby & Sapphire (E)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_GBA_PLAYER,            /* flags                */
+      FLAGS_FLASH_128KB | FLAGS_GBA_PLAYER, /* flags       */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball (J)
+      // Pokemon Pinball - Ruby & Sapphire (J)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_GBA_PLAYER,            /* flags                */
+      FLAGS_FLASH_128KB | FLAGS_GBA_PLAYER, /* flags       */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
