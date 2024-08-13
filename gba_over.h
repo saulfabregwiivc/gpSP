@@ -587,7 +587,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Kirby: Nightmare in Dreamland (E)
+      // Kirby: Nightmare in Dream Land (E)
       "AGB KIRBY DX",              /* gamepak_title        */
       "A7KP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -598,7 +598,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Kirby: Nightmare in Dreamland (U)
+      // Kirby: Nightmare in Dream Land (U)
       "AGB KIRBY DX",              /* gamepak_title        */
       "A7KE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
