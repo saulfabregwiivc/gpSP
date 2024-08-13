@@ -686,7 +686,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario & Luigi: Super Star Saga (E)
+      // Mario & Luigi: Superstar Saga (E)
       "MARIO&LUIGIP",              /* gamepak_title        */
       "A88P",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1547,7 +1547,7 @@ static const ini_t gbaover[] = {
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_GBA_PLAYER, /* flags       */
+      FLAGS_GBA_PLAYER,            /* flags                */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
@@ -1558,7 +1558,7 @@ static const ini_t gbaover[] = {
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_GBA_PLAYER, /* flags       */
+      FLAGS_GBA_PLAYER,            /* flags                */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
@@ -1569,7 +1569,7 @@ static const ini_t gbaover[] = {
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_GBA_PLAYER, /* flags       */
+      FLAGS_GBA_PLAYER,            /* flags                */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
