@@ -516,9 +516,9 @@ void retro_get_system_info(struct retro_system_info* info)
  #else
    info->library_version = GPSP_VERSION;
  #endif
-   info->need_fullpath = true;
-   info->block_extract = false;
-   info->valid_extensions = "gba|bin|agb|gbz|u1" ;
+   info->need_fullpath = false;
+   info->block_extract = true;
+   info->valid_extensions = "gba|bin|agb|gbz|u1|srl" ;
 }
 
 
