@@ -376,6 +376,8 @@ u32 gamepak_sticky_bit[1024/32];
 // a lot.
 RFILE *gamepak_file_large = NULL;
 
+u8* copyPtr = NULL;
+
 // Writes to these respective locations should trigger an update
 // so the related subsystem may react to it.
 
@@ -2196,8 +2198,10 @@ u8 *load_gamepak_page(u32 physical_index)
   // Fill in the entry
   gamepak_blk_queue[entry].phy_rom = physical_index;
 
-  filestream_seek(gamepak_file_large, physical_index * (32 * 1024), SEEK_SET);
-  filestream_read(gamepak_file_large, swap_location, (32 * 1024));
+  //filestream_seek(gamepak_file_large, physical_index * (32 * 1024), SEEK_SET);
+  //filestream_read(gamepak_file_large, swap_location, (32 * 1024));
+  
+  memcpy(swap_location, &copyPtr[physical_index * (32 * 1024)], (32 * 1024));
 
   // Map it to the read handlers now
   map_rom_entry(read, physical_index, swap_location, gamepak_size >> 15);
@@ -2305,12 +2309,13 @@ void init_memory(void)
 
 void memory_term(void)
 {
+#if 0
   if (gamepak_file_large)
   {
     filestream_close(gamepak_file_large);
     gamepak_file_large = NULL;
   }
-
+#endif
   while (gamepak_buffer_count)
   {
     free(gamepak_buffers[--gamepak_buffer_count]);
@@ -2497,15 +2502,21 @@ unsigned memory_write_savestate(u8 *dst)
   return (unsigned int)(dst - startp);
 }
 
-static s32 load_gamepak_raw(const char *name)
+//static s32 load_gamepak_raw(const char *name)
+static s32 load_gamepak_raw(u8* romdata, size_t romsize)
 {
   unsigned i, j;
-  gamepak_file_large = filestream_open(name, RETRO_VFS_FILE_ACCESS_READ,
-                                       RETRO_VFS_FILE_ACCESS_HINT_NONE);
-  if(gamepak_file_large)
+  //gamepak_file_large = filestream_open(name, RETRO_VFS_FILE_ACCESS_READ,
+    //                                   RETRO_VFS_FILE_ACCESS_HINT_NONE);
+
+  //if(gamepak_file_large)
+  if(romdata)
   {
+    copyPtr = romdata;
+
     // Round size to 32KB pages
-    gamepak_size = (u32)filestream_get_size(gamepak_file_large);
+    //gamepak_size = (u32)filestream_get_size(gamepak_file_large);
+    gamepak_size = (u32)romsize;
     gamepak_size = (gamepak_size + 0x7FFF) & ~0x7FFF;
 
     // Load stuff in 1MB chunks
@@ -2521,7 +2532,8 @@ static s32 load_gamepak_raw(const char *name)
     for (i = 0; i < ldblks; i++)
     {
       // Load 1MB chunk and map it
-      filestream_read(gamepak_file_large, gamepak_buffers[i], gamepak_buffer_blocksize);
+      //filestream_read(gamepak_file_large, gamepak_buffers[i], gamepak_buffer_blocksize);
+      memcpy(gamepak_buffers[i], &romdata[gamepak_buffer_blocksize * i], gamepak_buffer_blocksize);
       for (j = 0; j < 32 && i*32 + j < rom_blocks; j++)
       {
         u32 phyn = i*32 + j;
@@ -2544,7 +2556,7 @@ u32 load_gamepak(const struct retro_game_info* info, const char *name,
 {
    gamepak_info_t gpinfo;
 
-   if (load_gamepak_raw(name))
+   if (load_gamepak_raw((u8*)info->data, info->size))
       return -1;
 
    // Buffer 0 always has the first 1MB chunk of the ROM
