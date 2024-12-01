@@ -133,10 +133,10 @@ else ifneq (,$(findstring ios,$(platform)))
 		CC = cc -arch arm64 -isysroot $(IOSSDK)
 		CXX = c++ -arch arm64 -isysroot $(IOSSDK)
 	else
-		CC = cc -arch armv7 -isysroot $(IOSSDK)
-		CXX = c++ -arch armv7 -isysroot $(IOSSDK)
+		CC = cc -marm -arch armv7 -isysroot $(IOSSDK)
+		CXX = c++ -marm -arch armv7 -isysroot $(IOSSDK)
 	endif
-	CFLAGS += -DIOS -DHAVE_POSIX_MEMALIGN -marm
+	CFLAGS += -DIOS -DHAVE_POSIX_MEMALIGN
 
 	ifeq ($(platform),$(filter $(platform),ios9 ios-arm64))
 		MINVERSION = -miphoneos-version-min=8.0
@@ -153,13 +153,17 @@ else ifeq ($(platform), tvos-arm64)
 	fpic := -fPIC
 	SHARED := -dynamiclib
 	CPU_ARCH := arm
-	CFLAGS += -DIOS -DHAVE_POSIX_MEMALIGN -marm
+	CFLAGS += -DIOS -DHAVE_POSIX_MEMALIGN
 
 	ifeq ($(IOSSDK),)
 		IOSSDK := $(shell xcodebuild -version -sdk appletvos Path)
 	endif
    CC = clang -arch arm64 -isysroot $(IOSSDK)
    CXX = clang++ -arch arm64 -isysroot $(IOSSDK)
+   MINVERSION = -mappletvos-version-min=11.0
+   SHARED += $(MINVERSION)
+   CC += $(MINVERSION)
+   CXX += $(MINVERSION)
 
 # iOS Theos
 else ifeq ($(platform), theos_ios)
@@ -215,6 +219,7 @@ else ifneq (,$(filter $(platform), ngc wii wiiu))
 	CXX = $(DEVKITPPC)/bin/powerpc-eabi-g++$(EXE_EXT)
 	AR = $(DEVKITPPC)/bin/powerpc-eabi-ar$(EXE_EXT)
 	CFLAGS += -DGEKKO -mcpu=750 -meabi -mhard-float -DHAVE_STRTOF_L
+        CFLAGS += -ffunction-sections -fdata-sections -D__wiiu__ -D__wut__
 	STATIC_LINKING = 1
 
 # PSP
@@ -329,6 +334,7 @@ else ifeq ($(platform), classic_armv7_a7)
 	    LDFLAGS += -static-libgcc -static-libstdc++
 	  endif
 	endif
+
 #######################################
 
 # Xbox 360
@@ -491,6 +497,32 @@ else ifeq ($(platform), miyoo)
 	CFLAGS += -DSMALL_TRANSLATION_CACHE
 	HAVE_DYNAREC := 1
 	CPU_ARCH := arm
+	
+
+else ifeq ($(platform), miyoomini)
+	TARGET := $(TARGET_NAME)_plus_libretro.so
+	CC = /opt/miyoomini-toolchain/usr/bin/arm-linux-gcc
+	CXX = /opt/miyoomini-toolchain/usr/bin/arm-linux-g++
+	AR = /opt/miyoomini-toolchain/usr/bin/arm-linux-ar
+	fpic := -fPIC
+	SHARED := -shared -Wl,--version-script=link.T -Wl,--no-undefined
+	CFLAGS += -Ofast \
+	-flto=4 -fwhole-program -fuse-linker-plugin \
+	-fdata-sections -ffunction-sections -Wl,--gc-sections \
+	-fno-stack-protector -fno-ident -fomit-frame-pointer \
+	-falign-functions=1 -falign-jumps=1 -falign-loops=1 \
+	-fno-unwind-tables -fno-asynchronous-unwind-tables -fno-unroll-loops \
+	-fmerge-all-constants -fno-math-errno \
+	-marm -mtune=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=hard
+	CXXFLAGS = $(CFLAGS) -std=gnu++11
+	CPPFLAGS += $(CFLAGS)
+	ASFLAGS += $(CFLAGS)
+	CPU_ARCH := arm
+	MMAP_JIT_CACHE = 1
+	HAVE_DYNAREC = 1
+	HAVE_NEON = 1
+	ARCH = arm
+	BUILTIN_GPU = neon
 
 # Windows
 else
