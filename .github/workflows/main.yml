@@ -28,7 +28,7 @@ jobs:
         git clone https://github.com/libretro/RetroArch.git retroarch --recursive --depth 1 --branch v1.8.1
         cd retroarch
         mv ../core/gpsp_libretro_wii.a libretro_wii.a
-        docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitppc:20180522 sh -c "cd /build; make -f Makefile.griffin platform=wii EXTERNAL_LIBOGC=1 HAVE_THREADS=0 GX_PTHREAD_LEGACY=0"
+        docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitppc:20180522 sh -c "cd /build; make -f Makefile.griffin platform=wii"
     - uses: actions/upload-artifact@main
       with:
         name: vice_${{ matrix.core }}_${{ matrix.arch }}
