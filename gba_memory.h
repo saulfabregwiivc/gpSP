@@ -273,6 +273,8 @@ extern u8 *memory_map_read[8 * 1024];
 
 extern u32 reg[64];
 
+extern u32 agb_saveSize;
+
 #define BACKUP_SRAM       0
 #define BACKUP_FLASH      1
 #define BACKUP_EEPROM     2

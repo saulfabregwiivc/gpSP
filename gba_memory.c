@@ -376,6 +376,10 @@ u32 gamepak_sticky_bit[1024/32];
 // a lot.
 RFILE *gamepak_file_large = NULL;
 
+u8* copyPtr = NULL;
+
+u32 agb_saveSize = 64 * 1024;
+
 // Writes to these respective locations should trigger an update
 // so the related subsystem may react to it.
 
@@ -1262,8 +1266,7 @@ static void write_rtc(u8 old, u8 new)
   if (!(old & GPIO_RTC_CSS))
     rtc_state = RTC_COMMAND;
 
-  // Capture data on raising edge
-  if (!(old & GPIO_RTC_CLK) && (new & GPIO_RTC_CLK)) {
+  if ((old & GPIO_RTC_CLK) && !(new & GPIO_RTC_CLK)) {
     // Advance clock state, input/ouput data.
     switch (rtc_state) {
     case RTC_COMMAND:
@@ -1565,6 +1568,11 @@ typedef struct
 #define FLAGS_EEPROM         0x0010   // Forces EEPROM storage.
 #define FLAGS_RFU            0x0020   // Enables Wireless Adapter (via serial).
 
+// SuSo
+#define FLAGS_SRAM           0x0040   // Force output size 32KB
+#define FLAGS_EEPROM_512B    0x0080   // Force output size 512B
+#define FLAGS_ZERO           0x00A0   // Force output size 0
+
 #include "gba_over.h"
 
 static void load_game_config_over(gamepak_info_t *gpinfo)
@@ -1573,6 +1581,16 @@ static void load_game_config_over(gamepak_info_t *gpinfo)
 
   for (i = 0; i < sizeof(gbaover)/sizeof(gbaover[0]); i++)
   {
+     // SuSo: Game ID specific for GBA Bonus Pack
+	 if(strncmp(gpinfo->gamepak_code, "AE7E", 3) == 0)
+	    agb_saveSize = 32 * 1024;
+	 else if(strncmp(gpinfo->gamepak_code, "BE8E", 3) == 0)
+	    agb_saveSize = 32 * 1024;
+	 else if(strncmp(gpinfo->gamepak_code, "AZLE", 3) == 0)
+	    agb_saveSize = 8 * 1024;
+	 else if(strncmp(gpinfo->gamepak_code, "BGYJ", 4) == 0)
+	    agb_saveSize = 512;
+
      if (strcmp(gbaover[i].gamepak_code, gpinfo->gamepak_code))
         continue;
 
@@ -1593,6 +1611,8 @@ static void load_game_config_over(gamepak_info_t *gpinfo)
      if (gbaover[i].flags & FLAGS_FLASH_128KB) {
        flash_device_id = FLASH_DEVICE_MACRONIX_128KB;
        flash_bank_cnt = FLASH_SIZE_128KB;
+	   
+	   agb_saveSize = 128 * 1024;
      }
 
      if (gbaover[i].flags & FLAGS_RTC)
@@ -1601,8 +1621,18 @@ static void load_game_config_over(gamepak_info_t *gpinfo)
      if (gbaover[i].flags & FLAGS_RUMBLE)
        rumble_enabled = true;
 
-     if (gbaover[i].flags & FLAGS_EEPROM)
+     if (gbaover[i].flags & FLAGS_EEPROM) {
        backup_type_reset = BACKUP_EEPROM;
+	   
+	   agb_saveSize = 8 * 1024;
+	 }
+	 
+	 if (gbaover[i].flags & FLAGS_SRAM)
+	   agb_saveSize = 32 * 1024;
+	 else if (gbaover[i].flags & FLAGS_EEPROM_512B)
+	   agb_saveSize = 512;
+	 else if (gbaover[i].flags & FLAGS_ZERO)
+	   agb_saveSize = 0;
 
      if (serial_mode == SERIAL_MODE_AUTO) {
        if (gbaover[i].flags & FLAGS_RFU)
@@ -2197,8 +2227,12 @@ u8 *load_gamepak_page(u32 physical_index)
   // Fill in the entry
   gamepak_blk_queue[entry].phy_rom = physical_index;
 
+#ifdef ROM_FROM_MEM
+  memcpy(swap_location, &copyPtr[physical_index * (32 * 1024)], (32 * 1024));
+#else
   filestream_seek(gamepak_file_large, physical_index * (32 * 1024), SEEK_SET);
   filestream_read(gamepak_file_large, swap_location, (32 * 1024));
+#endif
 
   // Map it to the read handlers now
   map_rom_entry(read, physical_index, swap_location, gamepak_size >> 15);
@@ -2306,12 +2340,13 @@ void init_memory(void)
 
 void memory_term(void)
 {
+#ifndef ROM_FROM_MEM
   if (gamepak_file_large)
   {
     filestream_close(gamepak_file_large);
     gamepak_file_large = NULL;
   }
-
+#endif
   while (gamepak_buffer_count)
   {
     free(gamepak_buffers[--gamepak_buffer_count]);
@@ -2498,15 +2533,29 @@ unsigned memory_write_savestate(u8 *dst)
   return (unsigned int)(dst - startp);
 }
 
+#ifdef ROM_FROM_MEM
+static s32 load_gamepak_raw(u8* romdata, size_t romsize)
+#else
 static s32 load_gamepak_raw(const char *name)
+#endif
 {
   unsigned i, j;
   gamepak_file_large = filestream_open(name, RETRO_VFS_FILE_ACCESS_READ,
                                        RETRO_VFS_FILE_ACCESS_HINT_NONE);
+
+#ifdef ROM_FROM_MEM
+  if(romdata)
+#else
   if(gamepak_file_large)
+#endif
   {
+#ifdef ROM_FROM_MEM
+    copyPtr = romdata;
+	gamepak_size = (u32)romsize;
+#else
     // Round size to 32KB pages
     gamepak_size = (u32)filestream_get_size(gamepak_file_large);
+#endif
     gamepak_size = (gamepak_size + 0x7FFF) & ~0x7FFF;
 
     // Load stuff in 1MB chunks
@@ -2522,7 +2571,11 @@ static s32 load_gamepak_raw(const char *name)
     for (i = 0; i < ldblks; i++)
     {
       // Load 1MB chunk and map it
+#ifdef ROM_FROM_MEM
+      memcpy(gamepak_buffers[i], &romdata[gamepak_buffer_blocksize * i], gamepak_buffer_blocksize);
+#else
       filestream_read(gamepak_file_large, gamepak_buffers[i], gamepak_buffer_blocksize);
+#endif
       for (j = 0; j < 32 && i*32 + j < rom_blocks; j++)
       {
         u32 phyn = i*32 + j;
@@ -2545,7 +2598,11 @@ u32 load_gamepak(const struct retro_game_info* info, const char *name,
 {
    gamepak_info_t gpinfo;
 
+#ifdef ROM_FROM_MEM
+   if (load_gamepak_raw((u8*)info->data, info->size))
+#else
    if (load_gamepak_raw(name))
+#endif
       return -1;
 
    // Buffer 0 always has the first 1MB chunk of the ROM
@@ -2586,5 +2643,3 @@ s32 load_bios(char *name)
   filestream_close(fd);
   return 0;
 }
-
-

@@ -107,6 +107,9 @@ static void (*video_post_process)(void) = NULL;
 static bool post_process_cc  = false;
 static bool post_process_mix = false;
 
+// SuSo: trying to support variable savefile sizes
+//static bool rom_loaded = false;
+
 static void error_msg(const char* text)
 {
    if (log_cb)
@@ -516,9 +519,14 @@ void retro_get_system_info(struct retro_system_info* info)
  #else
    info->library_version = GPSP_VERSION;
  #endif
+#ifndef ROM_FROM_MEM
    info->need_fullpath = true;
    info->block_extract = false;
-   info->valid_extensions = "gba|bin|agb|gbz|u1" ;
+#else
+   info->need_fullpath = false;
+   info->block_extract = true;
+#endif
+   info->valid_extensions = "gba|bin|agb|gbz|u1|srl" ;
 }
 
 
@@ -1123,6 +1131,8 @@ bool retro_load_game(const struct retro_game_info* info)
    reset_gba();
 
    set_memory_descriptors();
+   
+   //rom_loaded = true;
 
    return true;
 }
@@ -1147,6 +1157,9 @@ void retro_unload_game(void)
    turbo_pulse_width = TURBO_PULSE_WIDTH_MIN;
    turbo_a_counter   = 0;
    turbo_b_counter   = 0;
+   
+   //rom_loaded = false;
+   agb_saveSize = 64 * 1024;
 }
 
 unsigned retro_get_region(void)
@@ -1167,7 +1180,8 @@ void* retro_get_memory_data(unsigned id)
 size_t retro_get_memory_size(unsigned id)
 {
    if (id == RETRO_MEMORY_SAVE_RAM)
-      return 0x20000;  /* Assume 128KiB, biggest possible save */
+     // return 0x20000;  /* Assume 128KiB, biggest possible save */
+      return agb_saveSize;  /* Assume 128KiB, biggest possible save */
    else if (id == RETRO_MEMORY_SYSTEM_RAM)
       return 0x40000;
 

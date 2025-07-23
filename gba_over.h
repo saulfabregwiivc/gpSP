@@ -88,7 +88,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Battle Network Rockman EXE (J)
+      // Battle Network RockMan EXE (J)
       "ROCKMAN_EXE",               /* gamepak_title        */
       "AREJ",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -587,7 +587,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Kirby: Nightmare in Dream Land (E)
+      // Kirby: Nightmare in Dreamland (E)
       "AGB KIRBY DX",              /* gamepak_title        */
       "A7KP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -598,7 +598,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Kirby: Nightmare in Dream Land (U)
+      // Kirby: Nightmare in Dreamland (U)
       "AGB KIRBY DX",              /* gamepak_title        */
       "A7KE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -686,7 +686,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario & Luigi: Superstar Saga (E)
+      // Mario & Luigi - Super Star Saga (E)
       "MARIO&LUIGIP",              /* gamepak_title        */
       "A88P",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -697,7 +697,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario & Luigi: Superstar Saga (U)
+      // Mario & Luigi - Super Star Saga (U)
       "MARIO&LUIGIU",              /* gamepak_title        */
       "A88E",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -708,7 +708,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario & Luigi RPG (J)
+      // Mario & Luigi - Super Star Saga (J)
       "MARIO&LUIGIJ",              /* gamepak_title        */
       "A88J",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -730,7 +730,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario Golf Advance (J)
+      // Mario Golf: Advance Tour (J)
       "MARIOGOLFGBA",              /* gamepak_title        */
       "BMGJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -807,7 +807,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario vs. Donkey Kong (U)
+      // Mario Vs Donkey Kong (U)
       "MARIOVSDK",                 /* gamepak_title        */
       "BM5E",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -851,29 +851,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mario Power Tennis (E)
-      "MARIOTENNISA",              /* gamepak_title        */
-      "BTMP",                      /* gamepak_code         */
-      "01",                        /* gamepak_maker        */
-      FLAGS_RFU,                   /* flags                */
-      0,                           /* idle_loop_target_pc  */
-      0,                           /* translation_gate_target_1 */
-      0,                           /* translation_gate_target_2 */
-      0,                           /* translation_gate_target_3 */
-   },
-   {
-      // Mario Tennis Advance (J)
-      "MARIOTENNISA",              /* gamepak_title        */
-      "BTMJ",                      /* gamepak_code         */
-      "01",                        /* gamepak_maker        */
-      FLAGS_RFU,                   /* flags                */
-      0,                           /* idle_loop_target_pc  */
-      0,                           /* translation_gate_target_1 */
-      0,                           /* translation_gate_target_2 */
-      0,                           /* translation_gate_target_3 */
-   },
-   {
-      // Mario Tennis: Power Tour (U/A)
+      // Mario Tenis (E)
       "MARIOTENNISA",              /* gamepak_title        */
       "BTME",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -895,7 +873,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network (E)
+      // Megaman Battle Network (E)
       "MEGAMANEXEBN",              /* gamepak_title        */
       "AREP",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -906,7 +884,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network (U)
+      // Megaman Battle Network (U)
       "MEGAMAN_BN",                /* gamepak_title        */
       "AREE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -917,7 +895,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 2 (U)
+      // Megaman Battle Network 2 (U)
       "MEGAMAN_EXE2",              /* gamepak_title        */
       "AE2E",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -928,7 +906,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 3 White (U)
+      // Megaman Battle Network 3 White (U)
       "MEGA_EXE3_WH",              /* gamepak_title        */
       "A6BE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -939,7 +917,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 3 Blue (U)
+      // Megaman Battle Network 3 Blue (U)
       "MEGA_EXE3_BL",              /* gamepak_title        */
       "A3XE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -950,7 +928,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 4 Red Sun (U)
+      // Megaman Battle Network 4 Red Sun (U)
       "MEGAMANBN4RS",              /* gamepak_title        */
       "B4WE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -961,7 +939,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 4 Blue Moon (U)
+      // Megaman Battle Network 4 Blue Moon (U)
       "MEGAMANBN4BM",              /* gamepak_title        */
       "B4BE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -972,7 +950,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 5 Team Protoman (U)
+      // Megaman Battle Network 5 Team Protoman (U)
       "MEGAMAN5_TP_",              /* gamepak_title        */
       "BRBE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -983,7 +961,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 5 Team Colonel (U)
+      // Megaman Battle Network 5 Team Colonel (U)
       "MEGAMAN5_TC_",              /* gamepak_title        */
       "BRKE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -994,7 +972,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 6 Cybeast Gregar (U)
+      // Megaman Battle Network 6 Cybeast Gregar (U)
       "MEGAMAN6_GXX",              /* gamepak_title        */
       "BR5E",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1005,7 +983,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Network 6 Cybeast Falzar (U)
+      // Megaman Battle Network 6 Cybeast Falzar (U)
       "MEGAMAN6_FXX",              /* gamepak_title        */
       "BR6E",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1016,7 +994,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Battle Chip Challenge (U)
+      // Megaman Battle Chip Challenge (U)
       "BATTLECHIPGP",              /* gamepak_title        */
       "A89E",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1027,7 +1005,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Zero (E/U)
+      // Megaman Zero (E/U)
       "MEGAMAN ZERO",              /* gamepak_title        */
       "AZCE",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1038,7 +1016,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Zero 2 (U)
+      // Megaman Zero 2 (U)
       "MEGAMANZERO2",              /* gamepak_title        */
       "A62E",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1049,7 +1027,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Zero 3 (U)
+      // Megaman Zero 3 (U)
       "MEGAMANZERO3",              /* gamepak_title        */
       "BZ3E",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1060,7 +1038,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mega Man Zero 4 (U)
+      // Megaman Zero 4 (U)
       "MEGAMANZERO4",              /* gamepak_title        */
       "B4ZP",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -1412,68 +1390,66 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fire Red (J)
-      // Added RTC even though it is not featured on the original game.
-      // This helps emulating ROM hacks.
+      // Pokemon: Fire Red (J)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fire Red (E/U)
+      // Pokemon: Fire Red (E/U)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fire Red (S)
+      // Pokemon: Fire Red (S)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRS",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fire Red (G)
+      // Pokemon: Fire Red (G)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRD",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fire Red (I)
+      // Pokemon: Fire Red (I)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRI",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fire Red (F)
+      // Pokemon: Fire Red (F)
       "POKEMON FIRE",              /* gamepak_title        */
       "BPRF",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
@@ -1481,73 +1457,73 @@ static const ini_t gbaover[] = {
    },
    {
       /* Hey, this one is the same as Fire Red, who'd have thought? :B */
-      // Pokemon Leaf Green (E/U)
+      // Pokemon: Leaf Green (E/U)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b2,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Leaf Green (S)
+      // Pokemon: Leaf Green (S)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGS",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b6,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Leaf Green (G)
+      // Pokemon: Leaf Green (G)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGD",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b6,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Leaf Green (I)
+      // Pokemon: Leaf Green (I)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGI",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b6,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Leaf Green (F)
+      // Pokemon: Leaf Green (F)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGF",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0x80008b6,                   /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Leaf Green (J)
+      // Pokemon: Leaf Green (J)
       "POKEMON LEAF",              /* gamepak_title        */
       "BPGJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
-      FLAGS_FLASH_128KB | FLAGS_RTC | FLAGS_RFU,  /* flags */
+      FLAGS_FLASH_128KB | FLAGS_RFU,  /* flags             */
       0,                           /* idle_loop_target_pc  */
       0,                           /* translation_gate_target_1 */
       0,                           /* translation_gate_target_2 */
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball: Ruby & Sapphire (U)
+      // Pokemon Pinball (U)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1558,7 +1534,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball: Ruby & Sapphire (E)
+      // Pokemon Pinball (E)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1569,7 +1545,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Pinball: Ruby & Sapphire (J)
+      // Pokemon Pinball (J)
       "POKEPIN R/S",               /* gamepak_title        */
       "BPPJ",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1580,7 +1556,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Fushigi no Dungeon: Aka no Kyuujotai (J)
+      // Pokemon: Fushigi no Dungeon Aka no Kyuujotai (J)
       "POKE DUNGEON",              /* gamepak_title        */
       "B24J",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1591,7 +1567,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Mystery Dungeon: Red Rescue Team (U)
+      // Pokemon: Red Rescue Team (U)
       "POKE DUNGEON",              /* gamepak_title        */
       "B24E",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1602,7 +1578,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Pokemon Mystery Dungeon: Red Rescue Team (E)
+      // Pokemon: Red Rescue Team (E)
       "POKE DUNGEON",              /* gamepak_title        */
       "B24P",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -1730,7 +1706,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Rockman EXE 4.5 - Real Operation (J)
+      // RockMan EXE 4.5 - Real Operation (J)
       "ROCKEXE4.5RO",              /* gamepak_title        */
       "BR4J",                      /* gamepak_code         */
       "08",                        /* gamepak_maker        */
@@ -2104,7 +2080,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // WarioWare, Inc.: Mega Microgames (U)
+      // Wario Ware, Inc. Mega Microgames (U)
       "WARIOWAREINC",              /* gamepak_title        */
       "AZWE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -2115,7 +2091,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // WarioWare: Twisted (U)
+      // Wario Ware, Twisted (U)
       "WARIOTWISTED",              /* gamepak_title        */
       "RZWE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -2126,7 +2102,7 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // WarioWare: Twisted (E)
+      // Wario Ware, Twisted (E)
       "WARIOTWISTED",              /* gamepak_title        */
       "RZWP",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
@@ -2137,9 +2113,20 @@ static const ini_t gbaover[] = {
       0,                           /* translation_gate_target_3 */
    },
    {
-      // Mawaru Made in Wario (J)
+      // Wario Ware, Twisted (J)
       "MAWARUWARIO",               /* gamepak_title        */
       "RZWJ",                      /* gamepak_code         */
+      "01",                        /* gamepak_maker        */
+      FLAGS_RUMBLE,                /* flags                */
+      0,                           /* idle_loop_target_pc  */
+      0,                           /* translation_gate_target_1 */
+      0,                           /* translation_gate_target_2 */
+      0,                           /* translation_gate_target_3 */
+   },
+   {
+      // Wario Land 4  (U)
+      "WARIOLANDE",                /* gamepak_title        */
+      "AWAE",                      /* gamepak_code         */
       "01",                        /* gamepak_maker        */
       FLAGS_RUMBLE,                /* flags                */
       0,                           /* idle_loop_target_pc  */
